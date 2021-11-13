@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/al-bertes/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/al-bertes/frontend-project-lvl1/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al-bertes/frontend-project-lvl1.git"
+  },
+  "author": "Albert Savchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/al-bertes/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/al-bertes/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
