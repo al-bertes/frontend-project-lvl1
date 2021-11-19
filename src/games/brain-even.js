@@ -6,13 +6,13 @@ export const checkByEvenNumber = (name) => {
     for (let i = 0; i < 3; i++) {
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
   
-      const randomNumber = Math.floor(Math.random() * 100);
+      const randomNumber = 0;
   
       console.log(`Question: ${randomNumber}`);
   
       const answerUsers = readlineSync.question(`Your answer: `);
   
-      if ((randomNumber%2 === 0 && answerUsers === 'yes') || ( randomNumber%2 !== 0 && answerUsers === 'no')) {
+      if ((randomNumber%2 === 0 && randomNumber !== 0 && answerUsers === 'yes') || ( randomNumber%2 !== 0 && randomNumber == 0 && answerUsers === 'no')) {
           console.log('Correct!');
           count = count + 1;
       } else {
