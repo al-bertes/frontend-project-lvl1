@@ -20,6 +20,6 @@ export const checkByEvenNumber = (name) => {
           Let's try again, ${name}`)
       }
    }
-      (count===3) ? console.log(`Congratulations, ${name}!`) : console.log('думай лучше') ;
+      (count===3) ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}`) ;
           
   };
