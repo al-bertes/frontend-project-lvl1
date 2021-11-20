@@ -17,7 +17,7 @@ export const progressionNumber = (name) => {
     const replaceElement = Math.floor(Math.random() * (arrNumber.length - 1)) + 1;
     const correctAnswer = arrNumber[replaceElement];
     arrNumber[replaceElement] = '..';
-    const stringArr = arrNumber.join(', ');
+    const stringArr = arrNumber.join(' ');
     console.log(`Question: ${stringArr}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
