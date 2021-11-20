@@ -8,9 +8,9 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-export const gcdGenerate = (name) => {
+const gcdGenerate = (name) => {
   let countCorrect = 0;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumberFirst = Math.floor(Math.random() * 100);
     const randomNumberSecond = Math.floor(Math.random() * 100);
     console.log('Find the greatest common divisor of given numbers.');
@@ -18,10 +18,9 @@ export const gcdGenerate = (name) => {
     const rirhtValue = gcd(randomNumberFirst, randomNumberSecond);
     const answerUsers = readlineSync.question('Your answer: ');
 
-    
-    if (rirhtValue == answerUsers) {
+    if (rirhtValue === answerUsers) {
       console.log('Correct!');
-      countCorrect++;
+      countCorrect += countCorrect;
     } else {
       console.log(`Question: ${randomNumberFirst} ${randomNumberSecond}`);
       console.log(`Your answer: ${answerUsers}`);
@@ -31,6 +30,8 @@ export const gcdGenerate = (name) => {
     }
   }
   if (countCorrect === 3) {
-    console.log(`Congratulations, ${name}!`) 
+    console.log(`Congratulations, ${name}!`);
   }
 };
+
+export default gcdGenerate;

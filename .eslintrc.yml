@@ -1,7 +1,16 @@
-rules:
-  no-console: 0
-  import/extensions: 0 
+env:
+  node: true
+  es2015: true
+
+extends:
+  - airbnb-base
 
 parserOptions:
-  ecmaVersion: 11
+  ecmaVersion: 12
   sourceType: module
+  
+rules: 
+  no-console: 0
+  import/extensions: 0
+
+  linebreak-style: ["error", "windows"]

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { calcGame } from "../src/games/brain-calc.js";
 import readlineSync from 'readline-sync';
-import {getName} from '../src/cli.js'
+import calcGame from '../src/games/brain-calc.js';
+import { getName } from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 

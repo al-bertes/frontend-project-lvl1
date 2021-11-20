@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { checkByEvenNumber } from "../src/games/brain-even.js";
-import {getName} from '../src/cli.js'
+import checkByEvenNumber from '../src/games/brain-even.js';
+import { getName } from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 

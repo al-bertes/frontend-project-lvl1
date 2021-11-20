@@ -1,9 +1,8 @@
 import readlineSync from 'readline-sync';
 
-
-export const progressionNumber = (name) => {
+const progressionNumber = (name) => {
   let countCorrect = 0;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     console.log('What number is missing in the progression?');
     let randomNumber = Math.floor(Math.random() * 20);
     const stepProgress = Math.floor(Math.random() * (6 - 1)) + 1;
@@ -23,7 +22,7 @@ export const progressionNumber = (name) => {
 
     if (userAnswer === String(correctAnswer)) {
       console.log('Correct!');
-      countCorrect++;
+      countCorrect += 1;
     } else {
       console.log(`Question: ${stringArr}`);
       console.log(`Your answer: ${userAnswer}`);
@@ -32,8 +31,10 @@ export const progressionNumber = (name) => {
       break;
     }
   }
-  
+
   if (countCorrect === 3) {
-    console.log(`Congratulations, ${name}!`) 
+    console.log(`Congratulations, ${name}!`);
   }
 };
+
+export default progressionNumber;
