@@ -22,9 +22,13 @@ export default gcdGenerate = (name) => {
       console.log('Correct!');
       countCorrect++;
     } else {
-      console.log(`'${answerUsers}' is wrong answer ;(. Correct answer was '${rirhtValue}'. Let's try again, ${name}!`);
+      console.log(`Question: ${randomNumberFirst} ${randomNumberSecond}`);
+      console.log(`Your answer: ${answerUsers}`);
+      console.log(`'${answerUsers}' is wrong answer ;(. Correct answer was '${rirhtValue}'.
+      Let's try again, ${name}!`);
+      break;
     }
 
-    (countCorrect === 3) ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
+    (countCorrect === 3) ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}!`);
   }
 };

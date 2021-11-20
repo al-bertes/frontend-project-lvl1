@@ -25,9 +25,11 @@ export const progressionNumber = (name) => {
       console.log('Correct!');
       countCorrect++;
     } else {
-      console.log(
-        `Question: ${stringArr}n\Your answer: ${userAnswer}n\'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.n\Let's try again, ${name}!`,
-      );
+      console.log(`Question: ${stringArr}`);
+      console.log(`Your answer: ${userAnswer}`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. 
+      Let's try again, ${name}!`);
+      break;
     }
   }
   (countCorrect === 3) ? console.log(`Congratulation, ${name}`) : console.log(`Let's try, again ${name}`);
