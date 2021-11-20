@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export const calcGame = (name) => {
+    let countCorrectResult = 0;
     for (let i = 0; i < 3; i++) {
     console.log('What is the result of the expression?');
     const randomNumberFirst = Math.floor(Math.random() * 100);
@@ -27,14 +28,18 @@ export const calcGame = (name) => {
             break;
     }
 
-    let countCorrectResult = 0;
+   
     if (resultOperation == answerUsers) {
         console.log('Correct!');
         countCorrectResult++;
     }else {
+        console.log(`Question: ${randomNumberFirst} ${opreator} ${randomNumberSecond}`);
+        console.log(`Your answer: ${answerUsers}`);
         console.log(`'${answerUsers}' is wrong answer ;(. Correct answer was '${resultOperation}'.
         Let's try again, ${name}!`);
+        break;
     }
-    (countCorrectResult===3) ? `Congratulations, ${name}!` : `Let's try again, ${name}!`
+    
  }
+ (countCorrectResult===3) ? `Congratulations, ${name}!` : `Let's try again, ${name}!`
 }
