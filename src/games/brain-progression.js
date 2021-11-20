@@ -32,5 +32,8 @@ export const progressionNumber = (name) => {
       break;
     }
   }
-  (countCorrect === 3) ? console.log(`Congratulation, ${name}`) : console.log(`Let's try, again ${name}`);
+  
+  if (countCorrect === 3) {
+    console.log(`Congratulations, ${name}!`) 
+  }
 };
