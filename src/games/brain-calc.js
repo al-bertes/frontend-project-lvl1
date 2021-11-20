@@ -41,5 +41,5 @@ export const calcGame = (name) => {
     }
     
  }
- (countCorrectResult===3) ? `Congratulations, ${name}!` : `Let's try again, ${name}!`
+ (countCorrectResult===3) ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}!`);
 }
