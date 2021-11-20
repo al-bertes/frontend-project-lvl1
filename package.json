@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "name": "@hexlet/code",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -8,7 +9,6 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/al-bertes/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/al-bertes/frontend-project-lvl1/actions)",
   "scripts": {
