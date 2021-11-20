@@ -5,14 +5,14 @@ export const checkByEvenNumber = (name) => {
     let count = 0;
     for (let i = 0; i < 3; i++) {
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  
-      const randomNumber = 0;
+
+    const randomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
   
       console.log(`Question: ${randomNumber}`);
   
       const answerUsers = readlineSync.question(`Your answer: `);
   
-      if ((randomNumber%2 === 0 && randomNumber !== 0 && answerUsers === 'yes') || ( randomNumber%2 !== 0 && randomNumber == 0 && answerUsers === 'no')) {
+      if ((randomNumber%2 === 0 &&  answerUsers === 'yes') || ( randomNumber%2 !== 0  && answerUsers === 'no')) {
           console.log('Correct!');
           count = count + 1;
       } else {
