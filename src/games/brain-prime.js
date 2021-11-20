@@ -28,9 +28,10 @@ export const brainPrimeGame = (name) => {
       console.log('Correct!');
       count++;
     } else {
-      console.log(
-        `Question: ${randomNumber} Your answer: '${userAnswer}'n\ is wrong answer ;(. Correct answer was '${resultPrime}'.n\ Let's try again, ${name}!`,
-      );
+      console.log(`Question: ${randomNumber}`);
+      console.log(`Your answer: ${userAnswer}`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${(resultPrime) ? 'yes': 'no'}'. 
+      Let's try again, ${name}!`);
     }
   }
   if (count === 3) {
