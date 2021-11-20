@@ -29,7 +29,7 @@ const calcGame = (name) => {
     const answerUsers = readlineSync.question('Your answer: ');
 
     const resultOperation = generateOperator(operator, randomNumberFirst, randomNumberSecond);
-    if (resultOperation === answerUsers) {
+    if (resultOperation === +answerUsers) {
       console.log('Correct!');
       countCorrectResult += 1;
     } else {
