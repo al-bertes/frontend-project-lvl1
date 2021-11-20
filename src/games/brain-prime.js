@@ -22,9 +22,8 @@ export const brainPrimeGame = (name) => {
     const resultPrime = isNumberPrime(randomNumber);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    const userAnswerBool = (userAnswer === 'yes');
-
-    if (resultPrime == userAnswerBool) {
+    const userAnswerBool = (userAnswer === 'yes'); 
+    if (resultPrime === userAnswerBool) {
       console.log('Correct!');
       count++;
     } else {
@@ -32,6 +31,7 @@ export const brainPrimeGame = (name) => {
       console.log(`Your answer: ${userAnswer}`);
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${(resultPrime) ? 'yes': 'no'}'. 
       Let's try again, ${name}!`);
+      break;
     }
   }
   if (count === 3) {
