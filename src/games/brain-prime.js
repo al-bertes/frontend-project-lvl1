@@ -33,5 +33,7 @@ export const brainPrimeGame = (name) => {
       );
     }
   }
-  (count === 3) ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}!`);
+  if (count === 3) {
+    console.log(`Congratulations, ${name}!`) 
+  }
 };
