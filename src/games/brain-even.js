@@ -17,7 +17,7 @@ export const checkByEvenNumber = (name) => {
           count = count + 1;
       } else {
           console.log(`"${answerUsers}" is wrong answer ;(. Correct answer was "${(answerUsers === 'yes') ? 'no' : 'yes'}".
-          Let's try again, ${name}`)
+          Let's try again, ${name}!`)
       }
    }
       (count===3) ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}`) ;
