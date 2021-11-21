@@ -1,49 +1,20 @@
-import readlineSync from 'readline-sync';
+import { generateOperator, generateRandomNumber } from '../utils.js';
+import { OPERATORS } from '../const.js';
+import newGame from '../index.js';
 
-const generateOperator = (operators, randomNumberFirst, randomNumberSecond) => {
-  switch (operators) {
-    case '+':
-      return randomNumberFirst + randomNumberSecond;
-    case '-':
-      return randomNumberFirst - randomNumberSecond;
-    case '*':
-      return randomNumberFirst * randomNumberSecond;
-    default:
-      throw new Error(`operation ${operators} is not supported`);
-  }
+const gameTask = 'What is the result of the expression?';
+
+const gameQuestionAnswer = () => {
+  const randomNumberFirst = generateRandomNumber();
+  const randomNumberSecond = generateRandomNumber();
+  const randomIndex = generateRandomNumber(2);
+  const operator = OPERATORS[randomIndex];
+  const question = `${randomNumberFirst} ${operator} ${randomNumberSecond}`;
+  const resultOperation = String(generateOperator(operator, randomNumberFirst, randomNumberSecond));
+
+  return [question, resultOperation];
 };
 
-const calcGame = (name) => {
-  let countCorrectResult = 0;
-  for (let i = 0; i < 3; i += 1) {
-    console.log('What is the result of the expression?');
-    const randomNumberFirst = Math.floor(Math.random() * 100);
-    const randomNumberSecond = Math.floor(Math.random() * 100);
-    const randomIndex = Math.floor(Math.random() * 3);
-    const operators = ['+', '-', '*'];
-
-    const operator = operators[randomIndex];
-
-    console.log(`Question: ${randomNumberFirst} ${operator} ${randomNumberSecond}`);
-
-    const answerUsers = readlineSync.question('Your answer: ');
-
-    const resultOperation = generateOperator(operator, randomNumberFirst, randomNumberSecond);
-    if (resultOperation === +answerUsers) {
-      console.log('Correct!');
-      countCorrectResult += 1;
-    } else {
-      console.log(`Question: ${randomNumberFirst} ${operator} ${randomNumberSecond}`);
-      console.log(`Your answer: ${answerUsers}`);
-      console.log(`'${answerUsers}' is wrong answer ;(. Correct answer was '${resultOperation}'.
-        Let's try again, ${name}!`);
-      break;
-    }
-  }
-
-  if (countCorrectResult === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
-};
+const calcGame = () => newGame(gameTask, gameQuestionAnswer);
 
 export default calcGame;

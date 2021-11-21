@@ -1,40 +1,26 @@
-import readlineSync from 'readline-sync';
+import { generateRandomNumber } from '../utils.js';
+import newGame from '../index.js';
 
-const progressionNumber = (name) => {
-  let countCorrect = 0;
-  for (let i = 0; i < 3; i += 1) {
-    console.log('What number is missing in the progression?');
-    let randomNumber = Math.floor(Math.random() * 20);
-    const stepProgress = Math.floor(Math.random() * (6 - 1)) + 1;
-    const lengtnArr = Math.floor(Math.random() * (12 - 5)) + 5;
-    const arrNumber = [];
+const gameTask = 'What number is missing in the progression?';
 
-    do {
-      randomNumber += stepProgress;
-      arrNumber.push(randomNumber);
-    } while (arrNumber.length < lengtnArr);
-    const replaceElement = Math.floor(Math.random() * (arrNumber.length - 1)) + 1;
-    const correctAnswer = arrNumber[replaceElement];
-    arrNumber[replaceElement] = '..';
-    const stringArr = arrNumber.join(' ');
-    console.log(`Question: ${stringArr}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+const gameQuestionAnswer = () => {
+  let randomNumber = generateRandomNumber(20);
+  const stepProgress = generateRandomNumber(6);
+  const lengtnArr = generateRandomNumber(12, 5);
+  const arrNumber = [];
 
-    if (userAnswer === String(correctAnswer)) {
-      console.log('Correct!');
-      countCorrect += 1;
-    } else {
-      console.log(`Question: ${stringArr}`);
-      console.log(`Your answer: ${userAnswer}`);
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. 
-      Let's try again, ${name}!`);
-      break;
-    }
-  }
+  do {
+    randomNumber += stepProgress;
+    arrNumber.push(randomNumber);
+  } while (arrNumber.length < lengtnArr);
+  const replaceElement = generateRandomNumber(arrNumber.length);
+  const resultOperation = String(arrNumber[replaceElement]);
+  arrNumber[replaceElement] = '..';
+  const question = arrNumber.join(' ');
 
-  if (countCorrect === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return [question, resultOperation];
 };
+
+const progressionNumber = () => newGame(gameTask, gameQuestionAnswer);
 
 export default progressionNumber;
