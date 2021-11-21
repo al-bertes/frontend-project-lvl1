@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import brainPrimeGame from '../src/games/brain-prime.js';
-import { getName } from '../src/cli.js';
+import getName from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 
