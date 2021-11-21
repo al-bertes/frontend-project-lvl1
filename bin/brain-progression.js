@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { progressionNumber } from "../src/games/brain-progression.js";
 import readlineSync from 'readline-sync';
-import {getName} from '../src/cli.js'
+import progressionNumber from '../src/games/brain-progression.js';
+import { getName } from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 
