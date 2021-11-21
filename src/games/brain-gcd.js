@@ -6,7 +6,7 @@ const gameQuestionAnswer = () => {
   const randomNumberFirst = generateRandomNumber();
   const randomNumberSecond = generateRandomNumber();
   const question = `${randomNumberFirst} ${randomNumberSecond}`;
-  const resultOperation = generateGcdNumber(randomNumberFirst, randomNumberSecond);
+  const resultOperation = String(generateGcdNumber(randomNumberFirst, randomNumberSecond));
 
   return [question, resultOperation];
 };
