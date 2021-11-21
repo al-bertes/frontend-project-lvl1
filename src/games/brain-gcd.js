@@ -18,9 +18,9 @@ const gcdGenerate = (name) => {
     const rirhtValue = gcd(randomNumberFirst, randomNumberSecond);
     const answerUsers = readlineSync.question('Your answer: ');
 
-    if (rirhtValue === answerUsers) {
+    if (rirhtValue === +answerUsers) {
       console.log('Correct!');
-      countCorrect += countCorrect;
+      countCorrect += 1;
     } else {
       console.log(`Question: ${randomNumberFirst} ${randomNumberSecond}`);
       console.log(`Your answer: ${answerUsers}`);
