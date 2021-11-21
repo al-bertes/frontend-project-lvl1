@@ -1,5 +1,5 @@
-export const getName = (name) => {
-    console.log(`Hello, ${name}!`);
-}
+const getName = (name) => {
+  console.log(`Hello, ${name}!`);
+};
 
-   
+export default getName;
